@@ -7,25 +7,37 @@ import { Injectable } from '@angular/core';
 
 export class SpeechService extends PepperService {
 
-    public async setVolume(volume: number) {
+    public async setVolume(volume: number, callback = null) {
         if (volume > 100) {volume = 100};
         if (volume < 0) {volume = 0};
-        this.robotUtils.onServices(async function(ALTextToSpeech) {
+        await this.robotUtils.onServices(async function(ALTextToSpeech) {
             await ALTextToSpeech.setVolume(volume/100);
+            callback();
           });
+        return;
     }
 
-    public getVolume(): number {
-      let volume: number = 50;
-        this.robotUtils.onServices(async function(ALTextToSpeech) {
-            volume = await ALTextToSpeech.getVolume()*100;
-          });
-      return volume;
-    }
-
-    public async say(text: string) {
+    public getVolume(callback) {
       return this.robotUtils.onServices(async function(ALTextToSpeech) {
-        await ALTextToSpeech.say(text);
+            callback(await ALTextToSpeech.getVolume()*100);
+          });
+    }
+
+    // function save_current_side(current_side, callback) {
+    //   a.b({
+    //     callback: function (a) {
+    //       callback(a);
+    //     }
+    //   });
+    // }
+    
+    // save_current_side(current_side, function(a){
+    //   console.log(a);
+    // });
+
+    public say(text: string) {
+      return this.robotUtils.onServices(function(ALTextToSpeech) {
+        ALTextToSpeech.say(text);
       });
     }
 }

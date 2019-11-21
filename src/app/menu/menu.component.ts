@@ -33,14 +33,16 @@ export class MenuComponent implements OnInit {
     console.log(window.RobotUtilsJs);
     // alert(window.RobotUtilsJs.robotIp);
     window.RobotUtilsJs.onServices(function(ALLeds, ALTextToSpeech) {
-          ALLeds.randomEyes(2.0);
-          // ALTextToSpeech.say("");
-        });
-    // this.ALTextToSpeech();
-    // await this.speechService.setVolume(100);
-    const volume = await this.speechService.getVolume();
-    console.log(volume);
-    // this.speechService.say(`Mijn volume is: ${volume}`)
+      ALLeds.randomEyes(20.0);
+    });
+    let speechService = this.speechService;
+    await this.speechService.setVolume(75, function() {
+      speechService.getVolume(async function(volume: number) {
+        console.log(volume);
+        speechService.say(`Mijn volume is: ${~~volume}`)
+      });
+    });
+
   }
 
   ALTextToSpeech() {

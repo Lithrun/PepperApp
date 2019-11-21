@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/Choregraph/html
 # Only exists if Bazel was run
 /bazel-out
 
@@ -44,3 +45,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+Choregraph/html/main.js
+Choregraph/html/main.js.map
