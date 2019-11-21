@@ -1,3 +1,7 @@
+declare global {
+    interface Window { RobotUtilsJs: any; }
+}
+
 export class PepperService {
-    public service: string;
+    public robotUtils: any = window.RobotUtilsJs;
 }

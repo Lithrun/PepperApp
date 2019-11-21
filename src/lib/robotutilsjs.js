@@ -289,5 +289,3 @@ var RobotUtilsJs = (function(self) {
     return self;
 
 })(window.RobotUtilsJs || {});
-
-export default RobotUtilsJs;
