@@ -19,6 +19,6 @@ export class MenuItemComponent implements OnInit {
 export class MenuItem {
   public name: string;
   public description: string;
-  public gifUrl: string;
+  public image: string;
   public path: string;
 }

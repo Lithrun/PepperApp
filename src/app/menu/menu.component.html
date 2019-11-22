@@ -1,3 +1,23 @@
-<li *ngFor="let item of items; index as i;">
-    <app-menu-item [menuItem]="item"></app-menu-item>
-</li>
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <app-top></app-top>
+        <img width="50" alt="Opties" src="assets/cogwheel.svg" [routerLink]="'/settings'">
+    </div>
+    <div class="row">
+        <div class="offset-1 col-4">
+            <app-menu-item [menuItem]="items[0]"></app-menu-item>
+        </div>
+        <div class="col-4 offset-2">
+            <app-menu-item [menuItem]="items[1]"></app-menu-item>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="offset-1 col-4">
+            <app-menu-item [menuItem]="items[2]"></app-menu-item>
+        </div>
+        <div class="col-4 offset-2">
+            <app-menu-item [menuItem]="items[3]"></app-menu-item>
+        </div>
+    </div>
+</div>

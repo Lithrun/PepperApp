@@ -17,39 +17,40 @@ window.RobotUtilsJs = window.RobotUtilsJs || {};
 export class MenuComponent implements OnInit {
 
   items: MenuItem[];
-  speechService: SpeechService;
+  private speechService: SpeechService;
 
   constructor(speechService: SpeechService) {
     this.speechService = speechService;
     this.items = [
       {
-        name: "a", description: "b", gifUrl: "c", path: "d"
+        name: "Memory", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"
+      },
+      {
+        name: "Geluiden", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"
+      },
+      {
+        name: "Quiz", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"
+      },
+      {
+        name: "Dansje", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"
       },
     ]
   }
 
   async ngOnInit() {
-    console.log("OKAY");
-    console.log(window.RobotUtilsJs);
-    // alert(window.RobotUtilsJs.robotIp);
-    window.RobotUtilsJs.onServices(function(ALLeds, ALTextToSpeech) {
-      ALLeds.randomEyes(20.0);
-    });
-    let speechService = this.speechService;
-    await this.speechService.setVolume(75, function() {
-      speechService.getVolume(async function(volume: number) {
-        console.log(volume);
-        speechService.say(`Mijn volume is: ${~~volume}`)
-      });
-    });
+    // console.log("OKAY");
+    // console.log(window.RobotUtilsJs);
+    // window.RobotUtilsJs.onServices(function(ALLeds, ALTextToSpeech) {
+    //   ALLeds.randomEyes(20.0);
+    // });
+    // let speechService = this.speechService;
+    // await this.speechService.setVolume(150, function() {
+    //   speechService.getVolume(async function(volume: number) {
+    //     console.log(volume);
+    //     speechService.say(`Mijn volume is: ${~~volume}`)
+    //   });
+    // });
 
-  }
-
-  ALTextToSpeech() {
-    window.RobotUtilsJs.onServices(function(ALTextToSpeech) {
-      // ALTextToSpeech.say("D");
-      // ALTextToSpeech.say(":");
-    });
   }
 
 }

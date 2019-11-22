@@ -1,11 +1,18 @@
 import { PepperService } from './pepper.service';
 import { Injectable } from '@angular/core';
+import { SettingsService } from './settings.service';
 
 @Injectable({
     providedIn: 'root',
   })
 
 export class SpeechService extends PepperService {
+
+    private settingsService: SettingsService;
+    constructor(settingsService: SettingsService) {
+      super();
+      this.settingsService = settingsService;
+    }
 
     public async setVolume(volume: number, callback = null) {
         if (volume > 100) {volume = 100};
@@ -23,21 +30,15 @@ export class SpeechService extends PepperService {
           });
     }
 
-    // function save_current_side(current_side, callback) {
-    //   a.b({
-    //     callback: function (a) {
-    //       callback(a);
-    //     }
-    //   });
-    // }
-    
-    // save_current_side(current_side, function(a){
-    //   console.log(a);
-    // });
-
-    public say(text: string) {
-      return this.robotUtils.onServices(function(ALTextToSpeech) {
-        ALTextToSpeech.say(text);
-      });
+    public say(text: string): void {
+      if (this.settingsService.isAnimatedSpeech()) {
+        this.robotUtils.onServices(function(ALAnimatedSpeech) {
+          ALAnimatedSpeech.say(text);
+        });
+      } else {
+        this.robotUtils.onServices(function(ALTextToSpeech) {
+          ALTextToSpeech.say(text);
+        });
+      }    
     }
 }

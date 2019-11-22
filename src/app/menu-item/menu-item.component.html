@@ -1,1 +1,7 @@
-<p>This is item {{menuItem.name}}</p>
+<div class="card" style="width: 18rem;" [routerLink]="'/' + menuItem.path">
+    <h5 class="card-body card-title-top">{{menuItem.name}}</h5>
+    <img class="card-img-top" src="{{menuItem.image}}" alt="Card image cap">
+    <div class="card-body">
+        <p class="card-text">{{menuItem.description}}</p>
+    </div>
+</div>

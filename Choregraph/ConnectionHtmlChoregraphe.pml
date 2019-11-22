@@ -6,30 +6,34 @@
     </BehaviorDescriptions>
     <Dialogs />
     <Resources>
-        <File name="3rdpartylicenses" src="html/3rdpartylicenses.txt" />
         <File name="favicon" src="html/favicon.ico" />
         <File name="index" src="html/index.html" />
-        <File name="polyfills-es2015.2987770fde9daa1d8a2e" src="html/polyfills-es2015.2987770fde9daa1d8a2e.js" />
-        <File name="polyfills-es5.6696c533341b95a3d617" src="html/polyfills-es5.6696c533341b95a3d617.js" />
-        <File name="runtime-es2015.edb2fcf2778e7bf1d426" src="html/runtime-es2015.edb2fcf2778e7bf1d426.js" />
-        <File name="runtime-es5.edb2fcf2778e7bf1d426" src="html/runtime-es5.edb2fcf2778e7bf1d426.js" />
-        <File name="styles.09e2c710755c8867a460" src="html/styles.09e2c710755c8867a460.css" />
         <File name="robotutilsjs" src="html/lib/robotutilsjs.js" />
-        <File name="main-es2015.3a8ee76d06ee03ce6281" src="html/main-es2015.3a8ee76d06ee03ce6281.js" />
-        <File name="main-es5.3a8ee76d06ee03ce6281" src="html/main-es5.3a8ee76d06ee03ce6281.js" />
-        <File name="3rdpartylicenses" src="PepperApp/3rdpartylicenses.txt" />
-        <File name="favicon" src="PepperApp/favicon.ico" />
-        <File name="index" src="PepperApp/index.html" />
-        <File name="robotutilsjs" src="PepperApp/lib/robotutilsjs.js" />
-        <File name="main-es2015.596b00dc0e2ab415e8af" src="PepperApp/main-es2015.596b00dc0e2ab415e8af.js" />
-        <File name="main-es5.596b00dc0e2ab415e8af" src="PepperApp/main-es5.596b00dc0e2ab415e8af.js" />
-        <File name="polyfills-es2015.2987770fde9daa1d8a2e" src="PepperApp/polyfills-es2015.2987770fde9daa1d8a2e.js" />
-        <File name="polyfills-es5.6696c533341b95a3d617" src="PepperApp/polyfills-es5.6696c533341b95a3d617.js" />
-        <File name="runtime-es2015.edb2fcf2778e7bf1d426" src="PepperApp/runtime-es2015.edb2fcf2778e7bf1d426.js" />
-        <File name="runtime-es5.edb2fcf2778e7bf1d426" src="PepperApp/runtime-es5.edb2fcf2778e7bf1d426.js" />
-        <File name="styles.09e2c710755c8867a460" src="PepperApp/styles.09e2c710755c8867a460.css" />
-        <File name="main-es2015.2a8e818ad148389b24a8" src="PepperApp/main-es2015.2a8e818ad148389b24a8.js" />
-        <File name="main-es5.2a8e818ad148389b24a8" src="PepperApp/main-es5.2a8e818ad148389b24a8.js" />
+        <File name="cogwheel" src="html/assets/cogwheel.svg" />
+        <File name="scripts" src="html/scripts.js" />
+        <File name="scripts.js" src="html/scripts.js.map" />
+        <File name="settings.component" src="html/app/settings/settings.component.html" />
+        <File name="main-es2015" src="html/main-es2015.js" />
+        <File name="main-es2015.js" src="html/main-es2015.js.map" />
+        <File name="main-es5" src="html/main-es5.js" />
+        <File name="main-es5.js" src="html/main-es5.js.map" />
+        <File name="polyfills-es2015" src="html/polyfills-es2015.js" />
+        <File name="polyfills-es2015.js" src="html/polyfills-es2015.js.map" />
+        <File name="polyfills-es5" src="html/polyfills-es5.js" />
+        <File name="polyfills-es5.js" src="html/polyfills-es5.js.map" />
+        <File name="runtime-es2015" src="html/runtime-es2015.js" />
+        <File name="runtime-es2015.js" src="html/runtime-es2015.js.map" />
+        <File name="runtime-es5" src="html/runtime-es5.js" />
+        <File name="runtime-es5.js" src="html/runtime-es5.js.map" />
+        <File name="styles-es2015" src="html/styles-es2015.js" />
+        <File name="styles-es2015.js" src="html/styles-es2015.js.map" />
+        <File name="styles-es5" src="html/styles-es5.js" />
+        <File name="styles-es5.js" src="html/styles-es5.js.map" />
+        <File name="vendor-es2015" src="html/vendor-es2015.js" />
+        <File name="vendor-es2015.js" src="html/vendor-es2015.js.map" />
+        <File name="vendor-es5" src="html/vendor-es5.js" />
+        <File name="vendor-es5.js" src="html/vendor-es5.js.map" />
+        <File name="memory" src="html/assets/menu/memory.png" />
     </Resources>
     <Topics />
     <IgnoredPaths>
