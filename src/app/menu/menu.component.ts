@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { RobotUtilsJs } from 'src/lib/robotutilsjs.js';
 import { MenuItem } from './menu-item/menu-item.component';
 import { SpeechService } from 'src/services/speech.service';
+import { SettingsService } from 'src/services/settings.service';
 
 declare global {
   interface Window { RobotUtilsJs: any; }
@@ -18,9 +19,11 @@ export class MenuComponent implements OnInit {
 
   items: MenuItem[];
   private speechService: SpeechService;
+  private settingsService: SettingsService;
 
-  constructor(speechService: SpeechService) {
+  constructor(speechService: SpeechService, settingsService: SettingsService) {
     this.speechService = speechService;
+    this.settingsService = settingsService;
     this.items = [
       {
         name: "Memory", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"
@@ -37,7 +40,8 @@ export class MenuComponent implements OnInit {
     ]
   }
 
-  async ngOnInit() {
+  ngOnInit() {
+    this.welcome();   
     // console.log("OKAY");
     // console.log(window.RobotUtilsJs);
     // window.RobotUtilsJs.onServices(function(ALLeds, ALTextToSpeech) {
@@ -51,6 +55,11 @@ export class MenuComponent implements OnInit {
     //   });
     // });
 
+  }
+
+  welcome() {
+    const name = this.settingsService.getPepperName();
+    this.speechService.say(`Hallo, ik ben ${name}. Welkom op de polikliniek!`);
   }
 
 }

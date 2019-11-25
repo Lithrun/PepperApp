@@ -3,10 +3,11 @@ import { NgRedux } from '@angular-redux/store'
 
 import { isEmpty } from '../../helper/object'
 import { IState, STATUS, ICard } from '../interface'
+import { SpeechService } from 'src/services/speech.service'
 
 @Injectable()
 export class GameActions {
-  constructor(private ngRedux: NgRedux<IState>) {}
+  constructor(private ngRedux: NgRedux<IState>, private speechService: SpeechService) {}
 
   static RESET = 'RESET'
   static UPDATE_STATUS = 'UPDATE_STATUS'
@@ -74,7 +75,12 @@ export class GameActions {
       this.updateLastSelectedCard(null)
       this.match()
       const remains = +state.remains - 1
-      return remains || this.updateStatus(STATUS.PASS)
+      if (!remains) {
+        this.speechService.say("Je hebt alle plaatjes gevonden. Goed gedaan!");
+        return this.updateStatus(STATUS.PASS);
+      }
+      return remains;
+      // return remains || this.updateStatus(STATUS.PASS)
     }
     const lastCard = state.lastSelectedCard
     this.updateLastSelectedCard(null)

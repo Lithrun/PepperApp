@@ -6,7 +6,6 @@
         </div>
     </div>
 </div>
-
 <div class="offset-md-1">
     <div class="">
         <label for="name">Pepper naam</label>
@@ -15,9 +14,10 @@
     <div class="custom-control custom-switch mb-3">
         <input class="custom-control-input" id="pepperAnimatedSpeech" type="checkbox" [checked]="settingsService.isAnimatedSpeech()" (change)="toggleAnimatedSpeech()">
         <label class="custom-control-label" for="pepperAnimatedSpeech">Pepper animated speech</label>
+        <img class="" width="50" alt="Opties" src="assets/audio.svg" (click)="testVolume()">
     </div>
     <div class="mb-3 col-md-3">
         <label for="volume">Volume {{ currentVolume }}</label>
-        <input type="range" #volume class="custom-range" min="0" max="100" (input)="setVolume(volume.value)">      
+        <input type="range" value="{{currentVolume}}" #volume class="custom-range" min="0" max="100" (input)="setVolume(volume.value)">      
     </div>    
 </div>

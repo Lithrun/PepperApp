@@ -26,7 +26,7 @@ export class SpeechService extends PepperService {
 
     public getVolume(callback) {
       return this.robotUtils.onServices(async function(ALTextToSpeech) {
-            callback(await ALTextToSpeech.getVolume()*100);
+            callback(Math.round(await ALTextToSpeech.getVolume()*100));
           });
     }
 
