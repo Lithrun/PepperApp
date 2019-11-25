@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
-import { ReduxConfigModule } from '../store'
+import { ReduxConfigModule } from './store'
 
 import { MemoryComponent } from './memory.component'
 import { DashboardComponent } from './dashboard/dashboard.component'
@@ -11,10 +11,18 @@ import { ChessboardComponent } from './chessboard/chessboard.component'
 import { CardComponent } from './chessboard/card.component'
 import { StatusComponent } from './status/status.component'
 
-import { GameActions } from '../store/action'
+import { GameActions } from './store/action'
+import { CommonModule } from '@angular/common'
+import { RouterModule } from '@angular/router'
 
 @NgModule({
-  imports: [BrowserModule, ReduxConfigModule],
+  imports: [
+    CommonModule,
+    ReduxConfigModule,
+    RouterModule.forChild([
+      {path: '', pathMatch: 'full', component: MemoryComponent}
+    ])
+  ],
   declarations: [
     MemoryComponent,
     DashboardComponent,
@@ -26,5 +34,7 @@ import { GameActions } from '../store/action'
   ],
   providers: [GameActions],
   bootstrap: [MemoryComponent]
-})
+}
+)
 export class MemoryModule {}
+console.log("Ok");

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core'
 
-import { GameActions } from '../store/action'
-import { STATUS } from '../store/interface'
+import { GameActions } from './store/action'
+import { STATUS } from './store/interface'
 
 @Component({
   selector: 'app-memory-game',
   templateUrl: './memory.component.html',
-  styleUrls: ['./memory.component.css']
+  styleUrls: ['./memory.component.scss']
 })
 export class MemoryComponent implements OnInit {
   constructor(private actions: GameActions) {}

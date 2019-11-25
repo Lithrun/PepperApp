@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { RobotUtilsJs } from 'src/lib/robotutilsjs.js';
-import { MenuItem } from '../menu-item/menu-item.component';
+import { MenuItem } from './menu-item/menu-item.component';
 import { SpeechService } from 'src/services/speech.service';
 
 declare global {

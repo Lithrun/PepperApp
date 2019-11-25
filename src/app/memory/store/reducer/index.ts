@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import { shuffle } from '../../../helper/array'
-import { isEmpty, isUndefined } from '../../../helper/object'
+import { shuffle } from '../../helper/array'
+import { isEmpty, isUndefined } from '../../helper/object'
 import { STATUS, ICard, IState } from '../interface'
 import { getGameCards } from '../model/card'
 import { GameActions } from '../action'
