@@ -1,2 +1,23 @@
-<p>Settings pagina</p>
-<input type="checkbox" [checked]="settingsService.isAnimatedSpeech()" (change)="toggleAnimatedSpeech()">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="d-inline-block">Pepper instellingen</h3>
+            <img class="float-right" width="50" alt="Terug" src="assets/return.jpg" [routerLink]="'/home'">    
+        </div>
+    </div>
+</div>
+
+<div class="offset-md-1">
+    <div class="">
+        <label for="name">Pepper naam</label>
+        <input id="name" #name type="text" value="{{pepperName}}" (change)="setPepperName(name.value)">
+    </div>
+    <div class="custom-control custom-switch mb-3">
+        <input class="custom-control-input" id="pepperAnimatedSpeech" type="checkbox" [checked]="settingsService.isAnimatedSpeech()" (change)="toggleAnimatedSpeech()">
+        <label class="custom-control-label" for="pepperAnimatedSpeech">Pepper animated speech</label>
+    </div>
+    <div class="mb-3 col-md-3">
+        <label for="volume">Volume {{ currentVolume }}</label>
+        <input type="range" #volume class="custom-range" min="0" max="100" (input)="setVolume(volume.value)">      
+    </div>    
+</div>

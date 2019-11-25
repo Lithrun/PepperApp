@@ -9,6 +9,10 @@ import { SettingsComponent } from './settings/settings.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import { TopComponent } from './top/top.component';
 import { MemoryComponent } from './memory/memory.component';
+import { SoundComponent } from './sound/sound.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { DanceComponent } from './dance/dance.component';
+import { DanceItemComponent } from './dance-item/dance-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { MemoryComponent } from './memory/memory.component';
     SettingsComponent,
     MenuItemComponent,
     TopComponent,
-    MemoryComponent
+    MemoryComponent,
+    SoundComponent,
+    QuizComponent,
+    DanceComponent,
+    DanceItemComponent
   ],
   imports: [
     BrowserModule,

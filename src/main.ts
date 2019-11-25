@@ -10,3 +10,6 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+
+document.head.removeChild(document.querySelector('#splash-spinner'))
+document.body.removeChild(document.querySelector('.spinner'))

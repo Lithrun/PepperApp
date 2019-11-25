@@ -16,11 +16,28 @@ export class SettingsComponent implements OnInit {
     this.speechService = speechService;
   }
 
+  currentVolume: number = 100;
+  pepperName: string;
+
   ngOnInit() {
+    this.speechService.getVolume(function(volume) {
+      this.currentVolume = volume;
+    });
+    this.pepperName = this.settingsService.getPepperName();
   }
 
   toggleAnimatedSpeech() {
     this.settingsService.toggleAnimatedSpeech();
+  }
+
+  setVolume(volume: number) {
+    this.speechService.setVolume(volume);
+    this.currentVolume = volume;
+  }
+
+  setPepperName(name: string) {
+    this.settingsService.setPepperName(name);
+    this.pepperName = name;
   }
 
 }

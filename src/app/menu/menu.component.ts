@@ -26,13 +26,13 @@ export class MenuComponent implements OnInit {
         name: "Memory", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"
       },
       {
-        name: "Geluiden", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"
+        name: "Geluiden", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "sound"
       },
       {
-        name: "Quiz", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"
+        name: "Quiz", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "quiz"
       },
       {
-        name: "Dansje", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"
+        name: "Dansje", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "dance"
       },
     ]
   }
