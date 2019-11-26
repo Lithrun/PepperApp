@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SpeechService } from 'src/services/speech.service';
 
 @Component({
   selector: 'app-menu-item',
@@ -9,9 +10,15 @@ export class MenuItemComponent implements OnInit {
 
   @Input() menuItem: MenuItem;
 
-  constructor() { }
+  constructor(private speechService: SpeechService) { }
 
   ngOnInit() {
+  }
+
+  explainItem() {
+    const text = `${this.menuItem.name}. ${this.menuItem.description}`;
+    console.log(text);
+    this.speechService.say(text);
   }
 
 }

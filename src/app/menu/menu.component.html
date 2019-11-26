@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
             <div class="d-inline-block offset-md-1">
@@ -8,20 +8,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="offset-1 col-4">
-            <app-menu-item [menuItem]="items[0]"></app-menu-item>
-        </div>
-        <div class="col-4 offset-2">
-            <app-menu-item [menuItem]="items[1]"></app-menu-item>
-        </div>
+        <div class="col-md-12">
+            <h2 class=" d-inline-block offset-md-1 text-muted">Welkom op de polikliniek</h2>
+        </div>   
     </div>
-    <br>
-    <div class="row">
-        <div class="offset-1 col-4">
-            <app-menu-item [menuItem]="items[2]"></app-menu-item>
-        </div>
-        <div class="col-4 offset-2">
-            <app-menu-item [menuItem]="items[3]"></app-menu-item>
+    <div class="row offset-md-1 mt-2">
+        <div *ngFor="let item of items;" class="mr-4 mb-4">
+            <app-menu-item [menuItem]="item"></app-menu-item>
         </div>
     </div>
 </div>

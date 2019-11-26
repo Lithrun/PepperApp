@@ -8,7 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { TopComponent } from './top/top.component';
-import { SoundComponent } from './sound/sound.component';
+import { RiddleComponent } from './riddle/riddle.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { DanceComponent } from './dance/dance.component';
 
@@ -18,7 +18,7 @@ import { DanceComponent } from './dance/dance.component';
     MenuComponent,
     SettingsComponent,
     MenuItemComponent,
-    SoundComponent,
+    RiddleComponent,
     QuizComponent,
     DanceComponent,
     TopComponent

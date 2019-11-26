@@ -18,26 +18,27 @@ window.RobotUtilsJs = window.RobotUtilsJs || {};
 export class MenuComponent implements OnInit {
 
   items: MenuItem[];
+  pepperName: string;
   private speechService: SpeechService;
   private settingsService: SettingsService;
-  private pepperName: string;
 
   constructor(speechService: SpeechService, settingsService: SettingsService) {
     this.speechService = speechService;
     this.settingsService = settingsService;
     this.pepperName = this.settingsService.getPepperName();
+    const path = "assets/menu/";
     this.items = [
       {
-        name: "Memory", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"
+        name: "Memory", description: "Weet jij waar alle plaatjes liggen?", image: `${path}/memory.png`, path: "memory"
       },
       {
-        name: "Geluiden", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "sound"
+        name: "Raadsel", description: "Kan jij raden welk dier ik na doe?", image: `${path}/riddle.png`, path: "riddle"
       },
       {
-        name: "Quiz", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "quiz"
+        name: "Quiz", description: "Weet jij het antwoord op mijn vragen?", image: `${path}/quiz.png`, path: "quiz"
       },
       {
-        name: "Dansje", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "dance"
+        name: "Dansen", description: "Wil je samen met mij een dansje doen?", image: `${path}/dance.png`, path: "dance"
       },
     ]
   }

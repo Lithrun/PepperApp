@@ -1,7 +1,10 @@
-<div class="card" style="width: 18rem;" [routerLink]="'/' + menuItem.path">
-    <h5 class="card-body card-title-top">{{menuItem.name}}</h5>
-    <img class="card-img-top" src="{{menuItem.image}}" alt="Card image cap">
+<div class="card" style="width: 18rem;">
     <div class="card-body">
-        <p class="card-text">{{menuItem.description}}</p>
+        <div class="d-inline-block">
+            <h5 class="card-title-top">{{menuItem.name}}</h5>
+        </div>
+        <img class="float-right" width="25" alt="Opties" src="assets/audio.svg" (click)="explainItem()">
+        <h6 class="card-subtitle mb-2 text-muted">{{menuItem.description}}</h6>
+        <img class="card-img-top" width="200px" height="200px" src="{{menuItem.image}}" alt="Card image cap" [routerLink]="'/' + menuItem.path">
     </div>
 </div>

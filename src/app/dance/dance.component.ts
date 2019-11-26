@@ -17,18 +17,19 @@ export class DanceComponent implements OnInit {
   }
 
   private setDanceItems() {
+    const path = "assets/dance/"
     this.items = [
       {
-        name: "Memory", description: "Speel memory met mij!", image: "assets/memory/back.png"
+        name: "Robot", description: "De robot dans", image: `${path}robot.png`
       },
       {
-        name: "Geluiden", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png"
+        name: "Saluut", description: "De saluut", image: `${path}salute.png`
       },
       {
-        name: "Quiz", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png"
+        name: "De Floss", description: "De Floss", image: `${path}floss.png`
       },
       {
-        name: "Dansje", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png"
+        name: "Dab", description: "De Dab", image: `${path}dab.png`
       },
     ]
   }
