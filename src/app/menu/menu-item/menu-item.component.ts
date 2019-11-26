@@ -20,5 +20,5 @@ export class MenuItem {
   public name: string;
   public description: string;
   public image: string;
-  public path: string;
+  public path?: string;
 }

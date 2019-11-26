@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
 import { SettingsService } from 'src/services/settings.service';
 
 @Component({
@@ -14,10 +13,9 @@ export class TopComponent implements OnInit {
     this.settingsService = settingsService;
   }
 
-  pepperName: string;
+  @Input() title: string;
 
   ngOnInit() {
-    this.pepperName = this.settingsService.getPepperName();
   }
 
 }

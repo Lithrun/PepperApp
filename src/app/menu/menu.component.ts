@@ -20,10 +20,12 @@ export class MenuComponent implements OnInit {
   items: MenuItem[];
   private speechService: SpeechService;
   private settingsService: SettingsService;
+  private pepperName: string;
 
   constructor(speechService: SpeechService, settingsService: SettingsService) {
     this.speechService = speechService;
     this.settingsService = settingsService;
+    this.pepperName = this.settingsService.getPepperName();
     this.items = [
       {
         name: "Memory", description: "Speel memory met mij!", image: "https://i.imgur.com/jVuCj9V.png", path: "memory"

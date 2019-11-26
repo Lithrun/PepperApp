@@ -8,11 +8,9 @@ import { MenuComponent } from './menu/menu.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { TopComponent } from './top/top.component';
-import { MemoryComponent } from './memory/memory.component';
 import { SoundComponent } from './sound/sound.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { DanceComponent } from './dance/dance.component';
-import { DanceItemComponent } from './dance/dance-item/dance-item.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +18,10 @@ import { DanceItemComponent } from './dance/dance-item/dance-item.component';
     MenuComponent,
     SettingsComponent,
     MenuItemComponent,
-    TopComponent,
     SoundComponent,
     QuizComponent,
     DanceComponent,
-    DanceItemComponent
+    TopComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +29,7 @@ import { DanceItemComponent } from './dance/dance-item/dance-item.component';
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [TopComponent]
 })
 export class AppModule { }

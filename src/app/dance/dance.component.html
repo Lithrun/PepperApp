@@ -1,1 +1,8 @@
-<p>dance works!</p>
+<app-top [title]="'Dansen met Pepper'" ></app-top>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let item of items;" class="mr-4 mb-4">
+            <app-menu-item [menuItem]="item"></app-menu-item>
+        </div>
+    </div>
+</div>

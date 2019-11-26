@@ -37,4 +37,3 @@ import { RouterModule } from '@angular/router'
 }
 )
 export class MemoryModule {}
-console.log("Ok");
