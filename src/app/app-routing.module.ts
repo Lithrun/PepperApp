@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MemoryComponent } from './memory/memory.component';
 import { MenuComponent } from './menu/menu.component';
 import { SettingsComponent } from './settings/settings.component';
 import { QuizComponent } from './quiz/quiz.component';

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from './menu-item/menu-item.component';
 import { SpeechService } from 'src/services/speech.service';
 import { SettingsService } from 'src/services/settings.service';
+import { PointsService } from 'src/services/points.service';
 
 declare global {
   interface Window { RobotUtilsJs: any; }
@@ -19,28 +20,35 @@ export class MenuComponent implements OnInit {
 
   items: MenuItem[];
   pepperName: string;
-  private speechService: SpeechService;
-  private settingsService: SettingsService;
+  points: number;
 
-  constructor(speechService: SpeechService, settingsService: SettingsService) {
-    this.speechService = speechService;
-    this.settingsService = settingsService;
-    this.pepperName = this.settingsService.getPepperName();
-    const path = "assets/menu/";
-    this.items = [
-      {
-        name: "Memory", description: "Weet jij waar alle plaatjes liggen?", image: `${path}/memory.png`, path: "memory"
-      },
-      {
-        name: "Raadsel", description: "Kan jij raden welk dier ik na doe?", image: `${path}/riddle.png`, path: "riddle"
-      },
-      {
-        name: "Quiz", description: "Weet jij het antwoord op mijn vragen?", image: `${path}/quiz.png`, path: "quiz"
-      },
-      {
-        name: "Dansen", description: "Wil je samen met mij een dansje doen?", image: `${path}/dance.png`, path: "dance"
-      },
-    ]
+  constructor(
+    private speechService: SpeechService, 
+    private settingsService: SettingsService,
+    private pointsService: PointsService
+  ) {
+      this.speechService = speechService;
+      this.settingsService = settingsService;
+      this.pepperName = this.settingsService.getPepperName();
+      const path = "assets/menu/";
+      this.points = this.pointsService.get();
+      this.items = [
+        {
+          name: "Memory", description: "Kan jij onthouden waar alle plaatjes zijn?", image: `${path}/memory.png`, path: "memory"
+        },
+        {
+          name: "Raadsel", description: "Kan jij raden welk dierengeluid ik na doe?", image: `${path}/riddle.png`, path: "riddle"
+        },
+        {
+          name: "Quiz", description: "Weet jij het antwoord op mijn vragen?", image: `${path}/quiz.png`, path: "quiz"
+        },
+        {
+          name: "Dansen", description: "Wil je samen met mij een dansje doen?", image: `${path}/dance.png`, path: "dance"
+        },
+        {
+          name: "Informatie", description: "Wil je meer te weten komen over de polikliniek?", image: `${path}/info.svg`, path: "info"
+        },
+      ]
   }
 
   ngOnInit() {

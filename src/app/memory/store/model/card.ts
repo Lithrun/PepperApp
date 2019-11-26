@@ -1,5 +1,4 @@
 import { ICard } from '../interface'
-import { environment } from '../../../../environments/environment'
 
 const CARD_NAMES = [
   '8-ball',
@@ -16,7 +15,7 @@ const CARD_NAMES = [
 export const CARDS: Array<ICard> = CARD_NAMES.map(n => ({
   name: n,
   flipped: false,
-  url: `${environment.deployUrl}assets/memory/${n}.png`
+  url: `assets/memory/${n}.png`
 }))
 
 const CARDS_WITHOUT_BACK = CARDS.filter(c => c.name !== 'back')

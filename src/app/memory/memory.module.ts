@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
 
 import { ReduxConfigModule } from './store'
 
@@ -12,12 +11,15 @@ import { CardComponent } from './chessboard/card.component'
 import { StatusComponent } from './status/status.component'
 
 import { GameActions } from './store/action'
-import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
+import { SharedModule } from '../shared/shared.module'
+import { MemoryRoutingModule } from './memory-routing.module'
+import { CommonModule } from '@angular/common'
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
+    MemoryRoutingModule,
     ReduxConfigModule,
     RouterModule.forChild([
       {path: '', pathMatch: 'full', component: MemoryComponent}
@@ -34,6 +36,5 @@ import { RouterModule } from '@angular/router'
   ],
   providers: [GameActions],
   bootstrap: [MemoryComponent]
-}
-)
+})
 export class MemoryModule {}

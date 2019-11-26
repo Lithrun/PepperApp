@@ -45,4 +45,9 @@ export class SettingsComponent implements OnInit {
     this.pepperName = name;
   }
 
+  reset(): void {
+    localStorage.clear();
+    this.ngOnInit();
+  }
+
 }

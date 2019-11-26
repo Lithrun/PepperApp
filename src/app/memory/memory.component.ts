@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core'
 import { GameActions } from './store/action'
 import { STATUS } from './store/interface'
 import { SpeechService } from 'src/services/speech.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-memory-game',
@@ -13,7 +14,7 @@ export class MemoryComponent implements OnInit {
 
 
   private speechService: SpeechService;
-  constructor(private actions: GameActions, speechService: SpeechService) {
+  constructor(private actions: GameActions, speechService: SpeechService, private location: Location) {
     this.speechService = speechService;
   }
 

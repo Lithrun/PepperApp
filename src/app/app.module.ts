@@ -7,29 +7,29 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
-import { TopComponent } from './top/top.component';
 import { RiddleComponent } from './riddle/riddle.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { DanceComponent } from './dance/dance.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
     SettingsComponent,
+    MenuComponent,
     MenuItemComponent,
     RiddleComponent,
     QuizComponent,
-    DanceComponent,
-    TopComponent
+    DanceComponent    
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [TopComponent]
+  exports: []
 })
 export class AppModule { }

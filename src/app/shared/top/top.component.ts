@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SettingsService } from 'src/services/settings.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-top',
@@ -8,14 +9,16 @@ import { SettingsService } from 'src/services/settings.service';
 })
 export class TopComponent implements OnInit {
 
-  private settingsService: SettingsService;
-  constructor(settingsService: SettingsService) { 
-    this.settingsService = settingsService;
+  constructor(private location: Location) { 
   }
 
   @Input() title: string;
 
   ngOnInit() {
+  }
+
+  return() {
+    this.location.back();
   }
 
 }

@@ -12,5 +12,6 @@
     <div class="mb-3 col-md-3">
         <label for="volume">Volume {{ currentVolume }}</label>
         <input type="range" value="{{currentVolume}}" #volume class="custom-range" min="0" max="100" (input)="setVolume(volume.value)">      
-    </div>    
+    </div>
+    <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>    
 </div>
