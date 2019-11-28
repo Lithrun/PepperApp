@@ -52,7 +52,6 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.welcome();   
     // console.log("OKAY");
     // console.log(window.RobotUtilsJs);
     // window.RobotUtilsJs.onServices(function(ALLeds, ALTextToSpeech) {
@@ -66,11 +65,6 @@ export class MenuComponent implements OnInit {
     //   });
     // });
 
-  }
-
-  welcome() {
-    const name = this.settingsService.getPepperName();
-    this.speechService.say(`Hallo, ik ben ${name}. Welkom op de polikliniek!`);
   }
 
 }

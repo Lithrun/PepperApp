@@ -57,6 +57,7 @@
         <File name="vendor-es2015.js" src="html/vendor-es2015.js.map" />
         <File name="vendor-es5" src="html/vendor-es5.js" />
         <File name="vendor-es5.js" src="html/vendor-es5.js.map" />
+        <File name="info" src="html/assets/menu/info.svg" />
     </Resources>
     <Topics />
     <IgnoredPaths />

@@ -11,10 +11,11 @@ const routes: Routes = [
    { path: 'settings', component: SettingsComponent},
   //  { path: 'memory', component: MemoryComponent },
    { path: 'memory', loadChildren: () => import(`./memory/memory.module`).then(m => m.MemoryModule)},
+   { path: 'welcome', loadChildren: () => import(`./introduction/introduction.module`).then(m => m.IntroductionModule)},
    { path: 'riddle', component: RiddleComponent },
    { path: 'dance', component: DanceComponent },
    { path: 'quiz', component: QuizComponent },
-   { path: '', redirectTo: '/home', pathMatch: 'full' }
+   { path: '', redirectTo: '/welcome', pathMatch: 'full' }
 ];
 
 @NgModule({

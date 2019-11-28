@@ -13,13 +13,10 @@ import { StatusComponent } from './status/status.component'
 import { GameActions } from './store/action'
 import { RouterModule } from '@angular/router'
 import { SharedModule } from '../shared/shared.module'
-import { MemoryRoutingModule } from './memory-routing.module'
-import { CommonModule } from '@angular/common'
 
 @NgModule({
   imports: [
     SharedModule,
-    MemoryRoutingModule,
     ReduxConfigModule,
     RouterModule.forChild([
       {path: '', pathMatch: 'full', component: MemoryComponent}

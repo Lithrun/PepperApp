@@ -7,8 +7,8 @@ const CARD_NAMES = [
   'kronos',
   'rocket',
   'skinny-unicorn',
-  'that-guy',
-  'zeppelin',
+  //'that-guy',
+  // 'zeppelin',
   'back'
 ]
 

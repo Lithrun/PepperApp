@@ -1,0 +1,37 @@
+<aw-wizard #wizard [navBarLayout]="'large-filled-symbols'">
+    <aw-wizard-step [stepTitle]="'Steptitle 1'" [navigationSymbol]="{ symbol: '1' }">
+        <div class="centered-content">
+        <div>
+            Korte introductie over de polikliniek
+        </div>
+    
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary" awNextStep (click)="phaseOne()">Verder</button>
+        </div>
+        </div>
+    </aw-wizard-step>
+    <aw-wizard-step [stepTitle]="'Steptitle 2'" [navigationSymbol]="{ symbol: '2' }">
+        <div class="centered-content">
+        <div>
+            Pepper instellingen
+        </div>
+    
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary" awPreviousStep>Terug</button>
+            <button type="button" class="btn btn-secondary" awNextStep>Verder</button>
+        </div>
+        </div>
+    </aw-wizard-step>
+    <aw-wizard-step [stepTitle]="'Steptitle 3'" [navigationSymbol]="{ symbol: '3' }">
+        <div class="centered-content">
+        <div>
+            Pepper legt stappen polikliniek verder uit
+        </div>
+    
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary" awPreviousStep>Terug</button>
+            <button type="button" class="btn btn-secondary" (click)="finishSetup()">Klaar</button>
+        </div>
+        </div>
+    </aw-wizard-step>
+</aw-wizard>

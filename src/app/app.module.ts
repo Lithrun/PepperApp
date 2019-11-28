@@ -11,6 +11,8 @@ import { RiddleComponent } from './riddle/riddle.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { DanceComponent } from './dance/dance.component';
 import { SharedModule } from './shared/shared.module';
+import { IntroductionComponent } from './introduction/introduction.component';
+import { IntroductionModule } from './introduction/introduction.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { SharedModule } from './shared/shared.module';
   ],
   imports: [
     SharedModule,
+    IntroductionModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule

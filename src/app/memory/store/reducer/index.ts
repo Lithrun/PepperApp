@@ -16,7 +16,7 @@ export const rootReducer = combineReducers<IState>({
 
 export function remainReducer(state: number, action: any) {
   if (action.type === GameActions.RESET || isEmpty(state)) {
-    return 8
+    return 6
   }
   if (action.type === GameActions.UPDATE_REMAINS) {
     return action.payload

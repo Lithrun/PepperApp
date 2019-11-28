@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from '../menu/menu-item/menu-item.component';
+import { DanceService } from 'src/services/dance.service';
 
 @Component({
   selector: 'app-dance',
@@ -10,7 +11,7 @@ export class DanceComponent implements OnInit {
 
   items: MenuItem[];
 
-  constructor() { }
+  constructor(private danceService: DanceService) { }
 
   ngOnInit() {
     this.setDanceItems();
@@ -32,6 +33,10 @@ export class DanceComponent implements OnInit {
         name: "Dab", description: "De Dab", image: `${path}dab.png`
       },
     ]
+  }
+
+  private robot() {
+    this.danceService.dance();
   }
 
 }
