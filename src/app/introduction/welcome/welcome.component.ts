@@ -35,7 +35,7 @@ export class WelcomeComponent implements OnInit, OnDestroy {
 
     return self.pepperService.robotUtils.subscribeToALMemoryEvent("GazeAnalysis/PersonStartsLookingAtRobot", function(value) {
       const name = self.settingsService.getPepperName();
-      self.speechService.say(`Hallo, ik ben ${name}. Welkom op de polikliniek!`);
+      self.speechService.say(`Hallo, ik ben ${name}. Welkom op de polikliniek! Klik op mijn scherm om te beginnen.`);
     });  
   }
 

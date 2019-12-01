@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpeechService } from 'src/services/speech.service';
 
 @Component({
   selector: 'app-introduction',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntroductionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private speechService: SpeechService) { }
 
   ngOnInit() {
   }
 
   phaseOne() {
-    
+    this.speechService.say("Stap 2. Hier kun je mijn instellingen wijzigen. Zo kan je mijn naam wijzigen, mijn volume harder of zachter zetten en nog veel meer.")
   }
 
   finishSetup() {

@@ -40,7 +40,7 @@ export class SettingsService extends PepperService {
     public getPepperName(): string {
         const name = this.getSetting(this.name)
         return name === null 
-            ? "Pepper"
+            ? "Peppper"
             : name;
     }
 

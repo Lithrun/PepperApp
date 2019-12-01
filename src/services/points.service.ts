@@ -19,7 +19,6 @@ export class PointsService extends PepperService {
 
     public add(value: number): void {
         let balance:number = <number>this.get();
-        console.log(balance);
         balance = +balance + +value;
         localStorage.setItem(this.points, balance.toString());
     }
