@@ -1,11 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<package uuid="robotpepper-4c811e" version="0.0.0">
+<package version="0.0.0" uuid="robotpepper-4c811e">
  <names>
   <name lang="en_US">Untitled</name>
  </names>
- <supportedLanguages>
-  <language>en_US</language>
- </supportedLanguages>
  <descriptionLanguages>
   <language>en_US</language>
  </descriptionLanguages>

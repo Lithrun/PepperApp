@@ -58,10 +58,12 @@
         <File name="vendor-es5" src="html/vendor-es5.js" />
         <File name="vendor-es5.js" src="html/vendor-es5.js.map" />
         <File name="info" src="html/assets/menu/info.svg" />
+        <File name="fastclick" src="html/lib/fastclick.js" />
+        <File name="cow22" src="sound/cow.wav" />
     </Resources>
     <Topics />
     <IgnoredPaths />
-    <Translations auto-fill="en_US">
+    <Translations>
         <Translation name="translation_en_US" src="translations/translation_en_US.ts" language="en_US" />
     </Translations>
 </Package>

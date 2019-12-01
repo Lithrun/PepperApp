@@ -10,7 +10,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
   imports: [
     SharedModule,
     RouterModule.forChild([
-        {path: '', pathMatch: 'full', component: WelcomeComponent},
+        {path: 'welcome', component: WelcomeComponent},
         {path: 'setup', component: IntroductionComponent}
     ]),
     ArchwizardModule,
@@ -20,6 +20,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     WelcomeComponent
   ],
   providers: [],
-  bootstrap: [WelcomeComponent]
+  bootstrap: [],
+  exports: [IntroductionComponent, WelcomeComponent]
 })
 export class IntroductionModule {}

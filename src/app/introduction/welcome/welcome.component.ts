@@ -10,7 +10,7 @@ import { PepperService } from 'src/services/pepper.service';
 })
 export class WelcomeComponent implements OnInit, OnDestroy {
 
-  constructor(private settingsService: SettingsService, private speechService: SpeechService) { }
+  constructor(private settingsService: SettingsService, private speechService: SpeechService, private pepperService: PepperService) { }
 
   greetWhenApproachedEvent: any = this.welcome();
 
@@ -18,14 +18,25 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // this.greetWhenApproachedEvent.unsubscribe();
+    try {
+      this.greetWhenApproachedEvent.unsubscribe(function(callback) {
+      });
+    } catch (error) {
+      
+    }
   }
   
   welcome() {
-    // this.pepperService.robotUtils.subscribeToALMemoryEvent("EngagementZones/PersonApproached", function(value) {
-    //   const name = this.settingsService.getPepperName();
-    //   this.speechService.say(`Hallo, ik ben ${name}. Welkom op de polikliniek!`);
-    // });  
+    const self = this;
+
+    self.pepperService.robotUtils.onServices(function(ALAudioPlayer) {
+      ALAudioPlayer.playFile("/usr/share/naoqi/sounds/cow.wav");
+    });
+
+    return self.pepperService.robotUtils.subscribeToALMemoryEvent("GazeAnalysis/PersonStartsLookingAtRobot", function(value) {
+      const name = self.settingsService.getPepperName();
+      self.speechService.say(`Hallo, ik ben ${name}. Welkom op de polikliniek!`);
+    });  
   }
 
 }
