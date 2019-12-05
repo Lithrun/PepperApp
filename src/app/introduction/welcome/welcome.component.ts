@@ -29,6 +29,7 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   welcome() {
     const self = this;
 
+    this.playAudio();
     self.pepperService.robotUtils.onServices(function(ALAudioPlayer) {
       ALAudioPlayer.playFile("/usr/share/naoqi/sounds/cow.wav");
     });
@@ -38,5 +39,35 @@ export class WelcomeComponent implements OnInit, OnDestroy {
       self.speechService.say(`Hallo, ik ben ${name}. Welkom op de polikliniek! Klik op mijn scherm om te beginnen.`);
     });  
   }
+
+  playAudio(){
+    let audio = new Audio();
+    audio.src = "assets/cow.wav"; // Pepper is allowed to play any sound, at any moment
+    audio.load();
+    audio.play();
+  }
+
+//var self = this;
+// self.RobotUtilsJs.onServices(async function(ALSpeechRecognition) {
+//     await ALSpeechRecognition.unsubscribe("ASR");
+//     await ALSpeechRecognition.pause(true);
+//     await ALSpeechRecognition.removeAllContext();
+//     await ALSpeechRecognition.setVocabulary(["ja", "nee"], false);
+//     await ALSpeechRecognition.pause(false); 
+//   await ALSpeechRecognition.subscribe("ASR");
+// });
+
+//TODO ONLY SUBSCRIBE TO ALMEMORYEVENT ONCE, AS SUBMITTING IT MULTIPLE TIMES CAN CAUSE ISSUES
+// self.RobotUtilsJs.subscribeToALMemoryEvent("WordRecognized", function(value) {
+//             if (value[1] > 0.4) {
+//                 console.log(value);
+//                 self.RobotUtilsJs.onServices(function(ALTextToSpeech, ALSpeechRecognition) {
+//                     ALTextToSpeech.say("Jij zij:" + value[0]);
+//                     ALSpeechRecognition.pause(true);
+//                 });
+//             }
+//     });
+
+// RobotUtils.subscribeToALMemoryEvent returns a MemoryEventSubscription object, on which you can call .unsubscribe(), which takes as optional parameter a callback to be called when the ubsubscription is done.
 
 }

@@ -60,6 +60,8 @@
         <File name="info" src="html/assets/menu/info.svg" />
         <File name="fastclick" src="html/lib/fastclick.js" />
         <File name="cow22" src="sound/cow.wav" />
+        <File name="welcome" src="html/assets/welcome.png" />
+        <File name="cow" src="html/assets/cow.wav" />
     </Resources>
     <Topics />
     <IgnoredPaths />
