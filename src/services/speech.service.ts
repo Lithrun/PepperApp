@@ -30,15 +30,21 @@ export class SpeechService extends PepperService {
           });
     }
 
-    public say(text: string): void {
+    public say(text: string) {
       if (this.settingsService.isAnimatedSpeech()) {
-        this.robotUtils.onServices(function(ALAnimatedSpeech) {
+        return this.robotUtils.onServices(function(ALAnimatedSpeech) {
           ALAnimatedSpeech.say(text);
         });
       } else {
-        this.robotUtils.onServices(function(ALTextToSpeech) {
+        return this.robotUtils.onServices(function(ALTextToSpeech) {
           ALTextToSpeech.say(text);
         });
       }    
+    }
+
+    public stopAll() {
+      this.robotUtils.onServices(function(ALTextToSpeech) {
+        ALTextToSpeech.stopAll();
+      });
     }
 }

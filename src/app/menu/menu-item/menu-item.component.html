@@ -1,10 +1,10 @@
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
+<div class="card" style="width: 24rem; height: 19rem;">
+    <div class="card-body bg-{{menuItem.color}}">
         <div class="d-inline-block">
-            <h5 class="card-title-top">{{menuItem.name}}</h5>
+            <h2 class="card-title-top">{{menuItem.name}}</h2>
         </div>
-        <img class="float-right" width="25" alt="Opties" src="assets/audio.svg" (click)="explainItem()">
-        <h6 class="card-subtitle mb-2 text-muted">{{menuItem.description}}</h6>
-        <img class="card-img-top" width="200px" height="200px" src="{{menuItem.image}}" alt="Card image cap" [routerLink]="'/' + menuItem.path">
+        <!-- <img class="float-right" width="25" alt="Opties" src="assets/audio.svg" (click)="explainItem()"> -->
+        <h6 class="card-subtitle mb-2">{{menuItem.description}}</h6>
+        <img class="card-img-top" width="200px" height="240px" src="{{menuItem.image}}" alt="Card image cap" [routerLink]="'/' + menuItem.path">
     </div>
 </div>

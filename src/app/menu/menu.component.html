@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <div class="d-inline-block offset-md-1">
+        <div class="d-inline-block">
             <h1>Hallo, mijn naam is {{pepperName}}</h1>
         </div>
         
@@ -13,10 +13,10 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <h2 class=" d-inline-block offset-md-1 text-muted">Welkom op de polikliniek</h2>
+        <h2 class=" d-inline-block text-muted">Welkom op de polikliniek</h2>
     </div>   
 </div>
-<div class="row offset-md-2 mt-2">
+<div class="row mt-2 ml-4">
     <div *ngFor="let item of items;" class="mr-4 mb-4">
         <app-menu-item [menuItem]="item"></app-menu-item>
     </div>

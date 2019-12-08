@@ -7,3 +7,25 @@
 svg {
     fill: blue;
 }
+
+.bg-purple {
+    background-color: indigo;
+}
+
+.bg-primary, .bg-purple, .bg-info, .bg-success > .d-inline-block > .card-title-top {
+    color: white;
+}
+
+.bg-primary, .bg-purple, .bg-info, .bg-success > .card-subtitle {
+    color: white;
+}
+
+
+// .bg-purple > .d-inline-block > .card-title-top {
+//     color: white;
+// }
+
+// .bg-primary, .bg-purple > .card-subtitle {
+//     color: #c7cacc;
+// }
+

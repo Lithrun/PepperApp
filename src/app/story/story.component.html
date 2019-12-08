@@ -1,0 +1,6 @@
+<app-top [title]="'Verhaaltjes'" ></app-top>
+<div class="row offset-md-2 mt-2">
+    <div *ngFor="let item of items;" class="mr-4 mb-4">
+        <app-story-item [storyItem]="item"></app-story-item>
+    </div>
+</div>

@@ -14,7 +14,7 @@ const routes: Routes = [
    { path: 'memory', loadChildren: () => import(`./memory/memory.module`).then(m => m.MemoryModule)},
   //  { path: 'welcome', loadChildren: () => import(`./introduction/introduction.module`).then(m => m.IntroductionModule)},
   //  { path: 'welcome', component: WelcomeComponent},
-   { path: 'riddle', component: RiddleComponent },
+  //  { path: 'riddle', component: RiddleComponent },
    { path: 'dance', component: DanceComponent },
    { path: 'quiz', component: QuizComponent },
    { path: '', redirectTo: '/welcome', pathMatch: 'full' }

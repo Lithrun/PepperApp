@@ -1,0 +1,22 @@
+<app-top [title]="story.name"></app-top>
+<div class="row">
+    <div class="col-md-12" style="height:735px;">
+      <div class="row overflow-auto" style="height:50%;">
+        <div class="col-md-12">
+          <h4 *ngFor="let line of lines;" [ngClass]="(line.isSelected) ? 'bg-warning' : ''" (click)="selectNewLine(line)">
+              {{line.line}}
+          </h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 card border-dark mb-3">
+            <div class="card-body text-dark">
+                <img class="card-image-bottom" src="assets/menu/story.png">
+                <img width="200px" *ngIf="isPlaying" src="assets/story/pause.png" (click)="pause()">
+                <img width="200px" *ngIf="!isPlaying" src="assets/story/play.png" (click)="play()">
+
+            </div>
+        </div>   
+      </div>
+    </div>
+  </div>

@@ -30,9 +30,6 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     const self = this;
 
     this.playAudio();
-    self.pepperService.robotUtils.onServices(function(ALAudioPlayer) {
-      ALAudioPlayer.playFile("/usr/share/naoqi/sounds/cow.wav");
-    });
 
     return self.pepperService.robotUtils.subscribeToALMemoryEvent("GazeAnalysis/PersonStartsLookingAtRobot", function(value) {
       const name = self.settingsService.getPepperName();

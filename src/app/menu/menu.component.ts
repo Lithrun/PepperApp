@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 // import { RobotUtilsJs } from 'src/lib/robotutilsjs.js';
 import { MenuItem } from './menu-item/menu-item.component';
 import { SpeechService } from 'src/services/speech.service';
@@ -16,11 +16,12 @@ window.RobotUtilsJs = window.RobotUtilsJs || {};
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, OnDestroy {
 
   items: MenuItem[];
   pepperName: string;
   points: number;
+  timerId: any;
 
   constructor(
     private speechService: SpeechService, 
@@ -34,21 +35,25 @@ export class MenuComponent implements OnInit {
       this.points = this.pointsService.get();
       this.items = [
         {
-          name: "Memory", description: "Kan jij onthouden waar alle plaatjes zijn?", image: `${path}/memory.png`, path: "memory"
+          name: "Memory", description: "Kan jij onthouden waar alle plaatjes zijn?", image: `${path}/memory.png`, path: "memory", color: "primary"
         },
         {
-          name: "Raadsel", description: "Kan jij raden welk dierengeluid ik na doe?", image: `${path}/riddle.png`, path: "riddle"
+          name: "Raadsel", description: "Kan jij raden welk dierengeluid ik na doe?", image: `${path}/riddle.png`, path: "riddle", color: "success"
         },
         {
-          name: "Quiz", description: "Weet jij het antwoord op mijn vragen?", image: `${path}/quiz.png`, path: "quiz"
+          name: "Quiz", description: "Weet jij het antwoord op mijn vragen?", image: `${path}/quiz.png`, path: "quiz", color: "info"
         },
         {
-          name: "Dansen", description: "Wil je samen met mij een dansje doen?", image: `${path}/dance.png`, path: "dance"
+          name: "Dansen", description: "Wil je samen met mij een dansje doen?", image: `${path}/dance.png`, path: "dance", color: "danger"
         },
         {
-          name: "Informatie", description: "Wil je meer te weten komen over de polikliniek?", image: `${path}/info.svg`, path: "info"
+          name: "Verhaaltjes", description: "Wil je meer te weten komen over de polikliniek?", image: `${path}/story.png`, path: "story", color: "warning"
+        },
+        {
+          name: "Muziek", description: "Wil jij met mij samen naar muziek luisteren?", image: `${path}/music.png`, path: "music", color: "purple"
         },
       ]
+      this.invokeUserInteraction();
   }
 
   ngOnInit() {
@@ -66,5 +71,21 @@ export class MenuComponent implements OnInit {
     // });
 
   }
+
+  ngOnDestroy() {
+    clearInterval(this.timerId);
+  }
+
+  invokeUserInteraction() {
+    this.timerId = setInterval(this.recommendMenuItem, 45000, this.items);
+  }
+
+  recommendMenuItem(items: MenuItem[]) {
+    const randomItem = items[Math.floor(Math.random() * items.length)];
+    const speech = `${randomItem.description} Druk dan op ${randomItem.name}`;
+    console.log(speech);
+  }
+
+
 
 }

@@ -7,12 +7,13 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
-import { RiddleComponent } from './riddle/riddle.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { DanceComponent } from './dance/dance.component';
 import { SharedModule } from './shared/shared.module';
-import { IntroductionComponent } from './introduction/introduction.component';
 import { IntroductionModule } from './introduction/introduction.module';
+import { RiddleModule } from './riddle/riddle.module';
+import { StoryModule } from './story/story.module';
+import { MusicModule } from './music/music.module';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,15 @@ import { IntroductionModule } from './introduction/introduction.module';
     SettingsComponent,
     MenuComponent,
     MenuItemComponent,
-    RiddleComponent,
     QuizComponent,
-    DanceComponent    
+    DanceComponent,
   ],
   imports: [
     SharedModule,
     IntroductionModule,
+    MusicModule,
+    RiddleModule,
+    StoryModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
