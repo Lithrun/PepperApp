@@ -61,7 +61,11 @@
         <File name="fastclick" src="html/lib/fastclick.js" />
         <File name="cow22" src="sound/cow.wav" />
         <File name="welcome" src="html/assets/welcome.png" />
-        <File name="cow" src="html/assets/cow.wav" />
+        <File name="music" src="html/assets/menu/music.png" />
+        <File name="story" src="html/assets/menu/story.png" />
+        <File name="cow" src="html/assets/riddle/cow.wav" />
+        <File name="pause" src="html/assets/story/pause.png" />
+        <File name="play" src="html/assets/story/play.png" />
     </Resources>
     <Topics />
     <IgnoredPaths />

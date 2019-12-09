@@ -77,13 +77,14 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
 
   invokeUserInteraction() {
-    this.timerId = setInterval(this.recommendMenuItem, 45000, this.items);
+    const self = this;
+    this.timerId = setInterval(this.recommendMenuItem, 25000, this.items, self);
   }
 
-  recommendMenuItem(items: MenuItem[]) {
+  recommendMenuItem(items: MenuItem[], self: any) {
     const randomItem = items[Math.floor(Math.random() * items.length)];
     const speech = `${randomItem.description} Druk dan op ${randomItem.name}`;
-    console.log(speech);
+    self.speechService.say(speech);
   }
 
 

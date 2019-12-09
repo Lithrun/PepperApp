@@ -1,24 +1,25 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Story } from '../story';
 import { StoryService } from 'src/services/story.service';
 import { SpeechService } from 'src/services/speech.service';
+import { PepperService } from 'src/services/pepper.service';
 
 @Component({
   selector: 'app-story-detail',
   templateUrl: './story-detail.component.html',
   styleUrls: ['./story-detail.component.scss']
 })
-export class StoryDetailComponent implements OnInit {
+export class StoryDetailComponent implements OnInit, OnDestroy {
 
-  constructor(private storyService: StoryService, private speechService: SpeechService) {
-    this.story = this.storyService.getAllStories()[0];
+  constructor(private storyService: StoryService, private pepperService: PepperService, private speechService: SpeechService) {
+    this.story = storyService.getAllStories()[0];
     this.createLines();
-    console.log(this.lines);
   }
 
   story: Story;
   lines : StoryDetail[] = [];
   isPlaying: boolean;
+  textDoneMemoryEvent: any;
 
   //"ALTextToSpeech/TextDone" this should be used, but uncertain how this works with callbacks
   
@@ -26,15 +27,45 @@ export class StoryDetailComponent implements OnInit {
     // this.story = <Story>history.state.data.item;
   }
 
+  ngOnDestroy() {
+    console.log("OK");
+    this.speechService.stopAll();
+    this.isPlaying = false;
+    this.unsubcribeTextDoneEvent();
+  }
+  
+  subcribeTextDoneEvent() {
+    const self = this;
+    this.textDoneMemoryEvent = this.pepperService.robotUtils.subscribeToALMemoryEvent("ALTextToSpeech/TextDone", function(value) {
+      if (value === 1) {
+        self.getNextLine();
+        setTimeout(self.tellStory, 500, self);
+      }
+    });  
+  }
+
+  unsubcribeTextDoneEvent() {
+    try {
+      this.textDoneMemoryEvent.unsubscribe();
+    } catch (error) {     
+    }
+  }
+  
+
   play() {
     this.isPlaying = true;
-    this.speechService.say(this.getSelectedLine().line);
-    this.getNextLine();
+    this.tellStory(this);
+    this.subcribeTextDoneEvent();
   }
 
   pause() {
     this.speechService.stopAll();
     this.isPlaying = false;
+    this.unsubcribeTextDoneEvent();
+  }
+
+  private tellStory(self: any) {
+    self.speechService.say(self.getSelectedLine().line);
   }
 
   private createLines() {
@@ -61,7 +92,6 @@ export class StoryDetailComponent implements OnInit {
     currentLine.isSelected = false;
     const index = this.lines.indexOf(currentLine);
     let newLine: StoryDetail;
-    console.log(index);
     if (index + 1 < this.lines.length) {
       newLine = this.lines[index + 1];
       newLine.isSelected = true;
