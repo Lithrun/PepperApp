@@ -24,48 +24,54 @@
         <File name="that-guy" src="html/assets/memory/that-guy.png" />
         <File name="zeppelin" src="html/assets/memory/zeppelin.png" />
         <File name="dance" src="html/assets/menu/dance.png" />
+        <File name="info" src="html/assets/menu/info.svg" />
         <File name="memory" src="html/assets/menu/memory.png" />
+        <File name="music" src="html/assets/menu/music.png" />
         <File name="quiz" src="html/assets/menu/quiz.png" />
         <File name="riddle" src="html/assets/menu/riddle.png" />
+        <File name="story" src="html/assets/menu/story.png" />
         <File name="return" src="html/assets/return.jpg" />
+        <File name="cat" src="html/assets/riddle/audio/cat.wav" />
+        <File name="cow" src="html/assets/riddle/audio/cow.wav" />
+        <File name="dog" src="html/assets/riddle/audio/dog.wav" />
+        <File name="pig" src="html/assets/riddle/audio/pig.wav" />
+        <File name="pause" src="html/assets/story/pause.png" />
+        <File name="play" src="html/assets/story/play.png" />
+        <File name="welcome" src="html/assets/welcome.png" />
         <File name="favicon" src="html/favicon.ico" />
-        <File name="index" src="html/index.html" />
+        <File name="fastclick" src="html/lib/fastclick.js" />
         <File name="robotutilsjs" src="html/lib/robotutilsjs.js" />
         <File name="main-es2015" src="html/main-es2015.js" />
         <File name="main-es2015.js" src="html/main-es2015.js.map" />
-        <File name="main-es5" src="html/main-es5.js" />
-        <File name="main-es5.js" src="html/main-es5.js.map" />
         <File name="memory-memory-module-es2015" src="html/memory-memory-module-es2015.js" />
         <File name="memory-memory-module-es2015.js" src="html/memory-memory-module-es2015.js.map" />
-        <File name="memory-memory-module-es5" src="html/memory-memory-module-es5.js" />
-        <File name="memory-memory-module-es5.js" src="html/memory-memory-module-es5.js.map" />
         <File name="polyfills-es2015" src="html/polyfills-es2015.js" />
         <File name="polyfills-es2015.js" src="html/polyfills-es2015.js.map" />
-        <File name="polyfills-es5" src="html/polyfills-es5.js" />
-        <File name="polyfills-es5.js" src="html/polyfills-es5.js.map" />
         <File name="runtime-es2015" src="html/runtime-es2015.js" />
         <File name="runtime-es2015.js" src="html/runtime-es2015.js.map" />
-        <File name="runtime-es5" src="html/runtime-es5.js" />
-        <File name="runtime-es5.js" src="html/runtime-es5.js.map" />
         <File name="scripts" src="html/scripts.js" />
         <File name="scripts.js" src="html/scripts.js.map" />
         <File name="styles-es2015" src="html/styles-es2015.js" />
         <File name="styles-es2015.js" src="html/styles-es2015.js.map" />
-        <File name="styles-es5" src="html/styles-es5.js" />
-        <File name="styles-es5.js" src="html/styles-es5.js.map" />
         <File name="vendor-es2015" src="html/vendor-es2015.js" />
         <File name="vendor-es2015.js" src="html/vendor-es2015.js.map" />
+        <File name="index" src="html/index.html" />
+        <File name="main-es5" src="html/main-es5.js" />
+        <File name="main-es5.js" src="html/main-es5.js.map" />
+        <File name="memory-memory-module-es5" src="html/memory-memory-module-es5.js" />
+        <File name="memory-memory-module-es5.js" src="html/memory-memory-module-es5.js.map" />
+        <File name="icat" src="html/assets/riddle/image/icat.png" />
+        <File name="icow" src="html/assets/riddle/image/icow.png" />
+        <File name="idog" src="html/assets/riddle/image/idog.png" />
+        <File name="ipig" src="html/assets/riddle/image/ipig.png" />
+        <File name="polyfills-es5" src="html/polyfills-es5.js" />
+        <File name="polyfills-es5.js" src="html/polyfills-es5.js.map" />
+        <File name="runtime-es5" src="html/runtime-es5.js" />
+        <File name="runtime-es5.js" src="html/runtime-es5.js.map" />
+        <File name="styles-es5" src="html/styles-es5.js" />
+        <File name="styles-es5.js" src="html/styles-es5.js.map" />
         <File name="vendor-es5" src="html/vendor-es5.js" />
         <File name="vendor-es5.js" src="html/vendor-es5.js.map" />
-        <File name="info" src="html/assets/menu/info.svg" />
-        <File name="fastclick" src="html/lib/fastclick.js" />
-        <File name="cow22" src="sound/cow.wav" />
-        <File name="welcome" src="html/assets/welcome.png" />
-        <File name="music" src="html/assets/menu/music.png" />
-        <File name="story" src="html/assets/menu/story.png" />
-        <File name="cow" src="html/assets/riddle/cow.wav" />
-        <File name="pause" src="html/assets/story/pause.png" />
-        <File name="play" src="html/assets/story/play.png" />
     </Resources>
     <Topics />
     <IgnoredPaths />

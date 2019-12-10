@@ -21,7 +21,6 @@ export class IntroductionComponent implements OnInit {
   }
 
   finishSetup() {
-    this.speechService.stopAll();
     this.speechService.say(`Hallo ${this.settingsService.getFriendName()}, dit is het hoofdmenu. Hier kunnen wij samen een hoop leuken dingen doen. Als je zelf niet kan kiezen, geen zorgen, dan geef ik jou zo een suggestie`);
     window.location.href = "/home";
   }

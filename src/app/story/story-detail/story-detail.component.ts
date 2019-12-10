@@ -56,7 +56,8 @@ export class StoryDetailComponent implements OnInit, OnDestroy {
   play() {
     this.isPlaying = true;
     this.tellStory(this);
-    this.subcribeTextDoneEvent();
+    // this.subcribeTextDoneEvent();
+    this.getNextLine();
   }
 
   pause() {
@@ -93,7 +94,7 @@ export class StoryDetailComponent implements OnInit, OnDestroy {
     currentLine.isSelected = false;
     const index = this.lines.indexOf(currentLine);
     let newLine: StoryDetail;
-    if (index + 1 === this.lines.length) {
+    if (index + 1 !== this.lines.length) {
       newLine = this.lines[index + 1];
       newLine.isSelected = true;
     } else {

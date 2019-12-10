@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SpeechService } from 'src/services/speech.service';
 import { Riddle, RiddleService } from 'src/services/riddle.service';
 import { SettingsService } from 'src/services/settings.service';
+import { PepperService } from 'src/services/pepper.service';
 
 @Component({
   selector: 'app-riddle',
@@ -10,10 +11,15 @@ import { SettingsService } from 'src/services/settings.service';
 })
 export class RiddleComponent implements OnInit, OnDestroy {
 
-  constructor(private speechService: SpeechService, private settingsService: SettingsService, private riddleService: RiddleService) { }
+  constructor(
+    private speechService: SpeechService, 
+    private settingsService: SettingsService, 
+    private riddleService: RiddleService,
+    private pepperService: PepperService) { }
 
   items: Riddle[];
   correctAnswer: Riddle;
+  textDoneMemoryEvent: any;
 
   ngOnInit() {
     this.shuffle();
@@ -21,11 +27,27 @@ export class RiddleComponent implements OnInit, OnDestroy {
       welkom bij Dierenraadsels met ${this.settingsService.getPepperName()}. 
       Ik ga een dier na doen, als je weet welk dier het is, druk dan op de afbeelding van het dier.
     `);
-    this.playAnimalSound();
   }
 
   ngOnDestroy() {
     this.speechService.stopAll();
+    this.unsubcribeTextDoneEvent();
+  }
+
+  subcribeTextDoneEvent() {
+    const self = this;
+    this.textDoneMemoryEvent = this.pepperService.robotUtils.subscribeToALMemoryEvent("ALTextToSpeech/TextDone", function(value) {
+      if (value === 1) {
+        self.playAnimalSound();
+      }
+    });  
+  }
+
+  unsubcribeTextDoneEvent() {
+    try {
+      this.textDoneMemoryEvent.unsubscribe();
+    } catch (error) {     
+    }
   }
 
   private shuffle() {
@@ -46,7 +68,6 @@ export class RiddleComponent implements OnInit, OnDestroy {
       : this.speechService.sayNegative();
     this.speechService.say(`Het was een ${this.correctAnswer.name}. Ik ga nu weer een ander dier na doen, luister goed.`);
     this.shuffle();
-    this.playAnimalSound();
   }
 
 
