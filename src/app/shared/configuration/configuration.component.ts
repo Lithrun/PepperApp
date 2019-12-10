@@ -9,11 +9,7 @@ import { SpeechService } from 'src/services/speech.service';
 })
 export class ConfigurationComponent implements OnInit {
 
-  private settingsService: SettingsService;
-  private speechService: SpeechService;
-  constructor(settingsService: SettingsService, speechService: SpeechService) {
-    this.settingsService = settingsService;
-    this.speechService = speechService;
+  constructor(public settingsService: SettingsService, private speechService: SpeechService) {
   }
 
   currentVolume: number = 50;

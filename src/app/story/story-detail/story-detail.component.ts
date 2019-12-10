@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Story } from '../story';
-import { StoryService } from 'src/services/story.service';
 import { SpeechService } from 'src/services/speech.service';
 import { PepperService } from 'src/services/pepper.service';
 import { SettingsService } from 'src/services/settings.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-story-detail',
@@ -12,8 +12,11 @@ import { SettingsService } from 'src/services/settings.service';
 })
 export class StoryDetailComponent implements OnInit, OnDestroy {
 
-  constructor(private settingsService: SettingsService, private pepperService: PepperService, private speechService: SpeechService) {
-    // this.story = storyService.getAllStories()[0];
+  constructor(
+    private settingsService: SettingsService, 
+    private pepperService: PepperService, 
+    private speechService: SpeechService,
+    private location: Location) {
   }
 
   story: Story;
@@ -21,15 +24,12 @@ export class StoryDetailComponent implements OnInit, OnDestroy {
   isPlaying: boolean;
   textDoneMemoryEvent: any;
 
-  //"ALTextToSpeech/TextDone" this should be used, but uncertain how this works with callbacks
-  
   ngOnInit() {
     this.story = <Story>history.state.data.item;
     this.createLines();
   }
 
   ngOnDestroy() {
-    console.log("OK");
     this.speechService.stopAll();
     this.isPlaying = false;
     this.unsubcribeTextDoneEvent();
@@ -56,8 +56,7 @@ export class StoryDetailComponent implements OnInit, OnDestroy {
   play() {
     this.isPlaying = true;
     this.tellStory(this);
-    // this.subcribeTextDoneEvent();
-    this.getNextLine();
+    this.subcribeTextDoneEvent();
   }
 
   pause() {
@@ -99,7 +98,10 @@ export class StoryDetailComponent implements OnInit, OnDestroy {
       newLine.isSelected = true;
     } else {
       this.speechService.say(`En zo ${this.settingsService.getFriendName()}, dat was het einde van dit verhaaltje`);
-      this.unsubcribeTextDoneEvent();
+      const location = this.location;
+      setTimeout(function() {
+        location.back();
+      }, 5000);
       return;
     }
     return newLine;

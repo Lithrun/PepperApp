@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SpeechService } from 'src/services/speech.service';
 import { SettingsService } from 'src/services/settings.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-introduction',
@@ -9,7 +10,10 @@ import { SettingsService } from 'src/services/settings.service';
 })
 export class IntroductionComponent implements OnInit {
 
-  constructor(private speechService: SpeechService, private settingsService: SettingsService) { }
+  constructor(
+    private speechService: SpeechService, 
+    private settingsService: SettingsService,
+    private router: Router) { }
 
   ngOnInit() {
     const pepperName: string = this.settingsService.getPepperName();
@@ -22,7 +26,7 @@ export class IntroductionComponent implements OnInit {
 
   finishSetup() {
     this.speechService.say(`Hallo ${this.settingsService.getFriendName()}, dit is het hoofdmenu. Hier kunnen wij samen een hoop leuken dingen doen. Als je zelf niet kan kiezen, geen zorgen, dan geef ik jou zo een suggestie`);
-    window.location.href = "/home";
+    this.router.navigate(['/home']);
   }
 
   setFriendName(keyCode: number, name: string) {

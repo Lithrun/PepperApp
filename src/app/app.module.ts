@@ -14,6 +14,7 @@ import { IntroductionModule } from './introduction/introduction.module';
 import { RiddleModule } from './riddle/riddle.module';
 import { StoryModule } from './story/story.module';
 import { MusicModule } from './music/music.module';
+import { MemoryModule } from './memory/memory.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MusicModule } from './music/music.module';
   ],
   imports: [
     SharedModule,
+    MemoryModule,
     IntroductionModule,
     MusicModule,
     RiddleModule,

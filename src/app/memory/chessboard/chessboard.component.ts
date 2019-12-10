@@ -13,7 +13,7 @@ import { ICard } from '../store/interface'
 export class ChessboardComponent {
   @select() cards$: Observable<ICard[]>
 
-  constructor(private actions: GameActions) {}
+  constructor(public actions: GameActions) {}
 
   trackByCards(index: number, card: ICard) {
     return card._id

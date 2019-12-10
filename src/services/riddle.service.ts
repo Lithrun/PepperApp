@@ -28,6 +28,21 @@ export class RiddleService {
             soundFile: "cat.wav",
             imageFile: "cat.png"
         },
+        {
+            name: "Beer",
+            soundFile: "bear.wav",
+            imageFile: "bear.png"
+        },
+        {
+            name: "Olifant",
+            soundFile: "elephant.wav",
+            imageFile: "elephant.png"
+        },
+        {
+            name: "Schaap",
+            soundFile: "sheep.wav",
+            imageFile: "sheep.png"
+        },
 
     ]
 

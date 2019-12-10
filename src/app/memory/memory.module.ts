@@ -19,7 +19,7 @@ import { SharedModule } from '../shared/shared.module'
     SharedModule,
     ReduxConfigModule,
     RouterModule.forChild([
-      {path: '', pathMatch: 'full', component: MemoryComponent}
+      {path: 'memory', component: MemoryComponent}
     ])
   ],
   declarations: [
@@ -32,6 +32,6 @@ import { SharedModule } from '../shared/shared.module'
     StatusComponent
   ],
   providers: [GameActions],
-  bootstrap: [MemoryComponent]
+  bootstrap: []
 })
 export class MemoryModule {}

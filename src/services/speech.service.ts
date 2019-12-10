@@ -43,13 +43,19 @@ export class SpeechService extends PepperService {
     }
 
     public sayPositive() {
-      const randomPositivePhrase = this.positivePhrases[Math.floor(Math.random() * this.positivePhrases.length)];
-      this.say(randomPositivePhrase);
+      this.say(this.getPositiveFeedback());
     }
 
     public sayNegative() {
-      const randomNegativePhrase = this.negativePhrases[Math.floor(Math.random() * this.negativePhrases.length)];
-      this.say(randomNegativePhrase);
+      this.say(this.getNegativeFeedback());
+    }
+
+    public getPositiveFeedback() {
+      return this.positivePhrases[Math.floor(Math.random() * this.positivePhrases.length)];
+    }
+
+    public getNegativeFeedback() {
+      return this.negativePhrases[Math.floor(Math.random() * this.negativePhrases.length)];
     }
 
     public stopAll() {

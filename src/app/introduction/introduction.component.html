@@ -3,10 +3,10 @@
         <div class="centered-content">
             <div class="mb-3">
                 <label for="name">Naam van mijn vriendje</label>
-                <input id="name" #name type="text" value="{{friendName}}" (keydown)="setFriendName($event.keyCode, name.value)">
+                <input id="name" #name type="text" (keydown)="setFriendName($event.keyCode, name.value)">
             </div>     
             <div class="btn-group">
-                <button type="button" class="btn btn-lg btn-secondary"  [routerLink]="'/home'">Klaar</button>
+                <button type="button" class="btn btn-lg btn-secondary"  (click)="finishSetup()">Klaar</button>
             </div>
         </div>
     </aw-wizard-step>

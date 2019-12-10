@@ -35,7 +35,7 @@ export class DanceComponent implements OnInit {
     ]
   }
 
-  private robot() {
+  robot() {
     this.danceService.dance();
   }
 

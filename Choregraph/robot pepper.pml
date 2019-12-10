@@ -41,37 +41,26 @@
         <File name="favicon" src="html/favicon.ico" />
         <File name="fastclick" src="html/lib/fastclick.js" />
         <File name="robotutilsjs" src="html/lib/robotutilsjs.js" />
-        <File name="main-es2015" src="html/main-es2015.js" />
-        <File name="main-es2015.js" src="html/main-es2015.js.map" />
-        <File name="memory-memory-module-es2015" src="html/memory-memory-module-es2015.js" />
-        <File name="memory-memory-module-es2015.js" src="html/memory-memory-module-es2015.js.map" />
-        <File name="polyfills-es2015" src="html/polyfills-es2015.js" />
-        <File name="polyfills-es2015.js" src="html/polyfills-es2015.js.map" />
-        <File name="runtime-es2015" src="html/runtime-es2015.js" />
-        <File name="runtime-es2015.js" src="html/runtime-es2015.js.map" />
-        <File name="scripts" src="html/scripts.js" />
-        <File name="scripts.js" src="html/scripts.js.map" />
-        <File name="styles-es2015" src="html/styles-es2015.js" />
-        <File name="styles-es2015.js" src="html/styles-es2015.js.map" />
-        <File name="vendor-es2015" src="html/vendor-es2015.js" />
-        <File name="vendor-es2015.js" src="html/vendor-es2015.js.map" />
         <File name="index" src="html/index.html" />
-        <File name="main-es5" src="html/main-es5.js" />
-        <File name="main-es5.js" src="html/main-es5.js.map" />
-        <File name="memory-memory-module-es5" src="html/memory-memory-module-es5.js" />
-        <File name="memory-memory-module-es5.js" src="html/memory-memory-module-es5.js.map" />
         <File name="icat" src="html/assets/riddle/image/icat.png" />
         <File name="icow" src="html/assets/riddle/image/icow.png" />
         <File name="idog" src="html/assets/riddle/image/idog.png" />
         <File name="ipig" src="html/assets/riddle/image/ipig.png" />
-        <File name="polyfills-es5" src="html/polyfills-es5.js" />
-        <File name="polyfills-es5.js" src="html/polyfills-es5.js.map" />
-        <File name="runtime-es5" src="html/runtime-es5.js" />
-        <File name="runtime-es5.js" src="html/runtime-es5.js.map" />
-        <File name="styles-es5" src="html/styles-es5.js" />
-        <File name="styles-es5.js" src="html/styles-es5.js.map" />
-        <File name="vendor-es5" src="html/vendor-es5.js" />
-        <File name="vendor-es5.js" src="html/vendor-es5.js.map" />
+        <File name="3rdpartylicenses" src="html/3rdpartylicenses.txt" />
+        <File name="scripts.f4dea01b7cadda6bd082" src="html/scripts.f4dea01b7cadda6bd082.js" />
+        <File name="polyfills-es2015.833fec98dca74639f6a6" src="html/polyfills-es2015.833fec98dca74639f6a6.js" />
+        <File name="polyfills-es5.2ee26814028ae137920a" src="html/polyfills-es5.2ee26814028ae137920a.js" />
+        <File name="styles.14c5edbc754e64022635" src="html/styles.14c5edbc754e64022635.css" />
+        <File name="runtime-es2015.d6c52737d4587c65265f" src="html/runtime-es2015.d6c52737d4587c65265f.js" />
+        <File name="runtime-es5.d6c52737d4587c65265f" src="html/runtime-es5.d6c52737d4587c65265f.js" />
+        <File name="bear" src="html/assets/riddle/audio/bear.wav" />
+        <File name="elephant" src="html/assets/riddle/audio/elephant.wav" />
+        <File name="sheep" src="html/assets/riddle/audio/sheep.wav" />
+        <File name="ielephant" src="html/assets/riddle/image/ielephant.png" />
+        <File name="ibear" src="html/assets/riddle/image/ibear.png" />
+        <File name="isheep" src="html/assets/riddle/image/isheep.png" />
+        <File name="main-es2015.2719d9395bfbd0354e59" src="html/main-es2015.2719d9395bfbd0354e59.js" />
+        <File name="main-es5.2719d9395bfbd0354e59" src="html/main-es5.2719d9395bfbd0354e59.js" />
     </Resources>
     <Topics />
     <IgnoredPaths />

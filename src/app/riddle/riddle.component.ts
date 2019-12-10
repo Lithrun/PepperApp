@@ -20,8 +20,10 @@ export class RiddleComponent implements OnInit, OnDestroy {
   items: Riddle[];
   correctAnswer: Riddle;
   textDoneMemoryEvent: any;
+  canPlay: boolean = true;
 
   ngOnInit() {
+    this.subcribeTextDoneEvent();
     this.shuffle();
     this.speechService.say(`Hallo ${this.settingsService.getFriendName()}, 
       welkom bij Dierenraadsels met ${this.settingsService.getPepperName()}. 
@@ -38,7 +40,7 @@ export class RiddleComponent implements OnInit, OnDestroy {
     const self = this;
     this.textDoneMemoryEvent = this.pepperService.robotUtils.subscribeToALMemoryEvent("ALTextToSpeech/TextDone", function(value) {
       if (value === 1) {
-        self.playAnimalSound();
+        self.playAnimalSound(self.correctAnswer.soundFile);
       }
     });  
   }
@@ -53,20 +55,28 @@ export class RiddleComponent implements OnInit, OnDestroy {
   private shuffle() {
     this.items = this.riddleService.getRiddlePlaySet();
     this.correctAnswer = this.items[Math.floor(Math.random() * this.items.length)];
+    this.canPlay = true;
   }
 
-  private playAnimalSound() {
+  private playAnimalSound(sound: string) {
     let audio = new Audio();
-    audio.src = `assets/riddle/audio/${this.correctAnswer.soundFile}`; // Pepper is allowed to play any sound, at any moment
+    audio.src = `assets/riddle/audio/${sound}`; // Pepper is allowed to play any sound, at any moment
     audio.load();
     audio.play();
   }
 
-  private selectedOption(riddle: Riddle) {
-    riddle === this.correctAnswer
-      ? this.speechService.sayPositive()
-      : this.speechService.sayNegative();
-    this.speechService.say(`Het was een ${this.correctAnswer.name}. Ik ga nu weer een ander dier na doen, luister goed.`);
+  selectedOption(riddle: Riddle) {
+    if (this.canPlay === false) {
+      return;
+    }
+    
+    if (this.canPlay === true) {
+      this.canPlay = false;
+    }
+    const feedback = riddle === this.correctAnswer
+      ? this.speechService.getPositiveFeedback()
+      : this.speechService.getNegativeFeedback();
+    this.speechService.say(`${feedback}.. Het was een ${this.correctAnswer.name}. Ik ga nu weer een ander dier na doen, luister goed.`);
     this.shuffle();
   }
 
