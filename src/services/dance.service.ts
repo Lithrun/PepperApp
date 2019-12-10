@@ -1,6 +1,5 @@
 import { PepperService } from './pepper.service';
 import { Injectable } from '@angular/core';
-import { SettingsService } from './settings.service';
 
 @Injectable({
     providedIn: 'root',

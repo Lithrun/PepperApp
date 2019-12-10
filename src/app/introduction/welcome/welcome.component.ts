@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SettingsService } from 'src/services/settings.service';
 import { SpeechService } from 'src/services/speech.service';
 import { PepperService } from 'src/services/pepper.service';
+import { RecognitionService } from 'src/services/recognition.service';
 
 @Component({
   selector: 'app-welcome',
@@ -10,14 +11,24 @@ import { PepperService } from 'src/services/pepper.service';
 })
 export class WelcomeComponent implements OnInit, OnDestroy {
 
-  constructor(private settingsService: SettingsService, private speechService: SpeechService, private pepperService: PepperService) { }
+  constructor(
+    private settingsService: SettingsService, 
+    private speechService: SpeechService, 
+    private pepperService: PepperService,
+    private recognitionService: RecognitionService) { }
 
   greetWhenApproachedEvent: any = this.welcome();
 
   ngOnInit() {
+    // this.recognitionService.setWords(["Ja", "Nee"]);
+    // const service = this.speechService;
+    // this.recognitionService.setWordRecognizedEvent(function(value) {
+    //   service.say(value);
+    // })
   }
 
   ngOnDestroy() {
+    this.recognitionService.deleteWordRecognizedEvent();
     try {
       this.greetWhenApproachedEvent.unsubscribe(function(callback) {
       });
