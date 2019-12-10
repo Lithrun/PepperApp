@@ -2,6 +2,10 @@
     <label for="name">Pepper naam</label>
     <input id="name" #name type="text" value="{{pepperName}}" (keydown)="setPepperName($event.keyCode, name.value)">
 </div>
+<div class="mb-3">
+    <label for="name">Naam van mijn vriendje</label>
+    <input id="name" #name type="text" value="{{friendName}}" (keydown)="setFriendName($event.keyCode, name.value)">
+</div>
 <div class="custom-control custom-switch mb-3">
     <input class="custom-control-input" id="pepperAnimatedSpeech" type="checkbox" [checked]="settingsService.isAnimatedSpeech()" (change)="toggleAnimatedSpeech()">
     <label class="custom-control-label" for="pepperAnimatedSpeech">Pepper animated speech</label>

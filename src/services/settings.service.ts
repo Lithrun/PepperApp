@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 export class SettingsService extends PepperService {
     private animatedSpeech: string = "AnimatedSpeech"
     private name: string = "PepperName";
+    private friendName: string = "FriendName";
     private volume: string = "Volume"
 
     private toggle(localStorageKey: string): void {
@@ -41,6 +42,17 @@ export class SettingsService extends PepperService {
         const name = this.getSetting(this.name)
         return name === null 
             ? "Peppper"
+            : name;
+    }
+
+    public setFriendName(name: string): void {
+        this.setSetting(this.friendName, name);
+    }
+
+    public getFriendName(): string {
+        const name = this.getSetting(this.friendName)
+        return name === null 
+            ? "Vriendje"
             : name;
     }
 

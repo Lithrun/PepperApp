@@ -18,6 +18,8 @@ export class ConfigurationComponent implements OnInit {
 
   currentVolume: number = 50;
   pepperName: string;
+  friendName: string;
+
 
   ngOnInit() {
     const self = this;
@@ -25,6 +27,7 @@ export class ConfigurationComponent implements OnInit {
       self.currentVolume = volume;
     });
     this.pepperName = this.settingsService.getPepperName();
+    this.friendName = this.settingsService.getFriendName();
   }
 
   toggleAnimatedSpeech() {
@@ -47,6 +50,15 @@ export class ConfigurationComponent implements OnInit {
     this.settingsService.setPepperName(name);
     this.pepperName = name;
     this.speechService.say(`Mijn naam is nu ${name}`);
+  }
+
+  setFriendName(keyCode: number, name: string) {
+
+    if (keyCode != 13) return;
+
+    this.settingsService.setFriendName(name);
+    this.friendName = name;
+    this.speechService.say(`Jouw naam is ${name}. Wat een leuke naam`);
   }
 
   reset(): void {

@@ -10,13 +10,12 @@ import { StoryService } from 'src/services/story.service';
 export class StoryComponent implements OnInit {
 
   constructor(private storyService: StoryService) { 
-    this.items = this.storyService.getAllStories();
   }
 
   items: Story[];
 
-
   ngOnInit() {
+    this.items = this.storyService.getAllStories();
   }
 
 }

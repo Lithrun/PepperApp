@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-// import { RobotUtilsJs } from 'src/lib/robotutilsjs.js';
 import { MenuItem } from './menu-item/menu-item.component';
 import { SpeechService } from 'src/services/speech.service';
 import { SettingsService } from 'src/services/settings.service';
@@ -47,7 +46,7 @@ export class MenuComponent implements OnInit, OnDestroy {
           name: "Dansen", description: "Wil je samen met mij een dansje doen?", image: `${path}/dance.png`, path: "dance", color: "danger"
         },
         {
-          name: "Verhaaltjes", description: "Wil je meer te weten komen over de polikliniek?", image: `${path}/story.png`, path: "story", color: "warning"
+          name: "Verhaaltjes", description: "Zal ik je een leuk verhaaltje voorlezen?", image: `${path}/story.png`, path: "story", color: "warning"
         },
         {
           name: "Muziek", description: "Wil jij met mij samen naar muziek luisteren?", image: `${path}/music.png`, path: "music", color: "purple"
@@ -56,24 +55,11 @@ export class MenuComponent implements OnInit, OnDestroy {
       this.invokeUserInteraction();
   }
 
-  ngOnInit() {
-    // console.log("OKAY");
-    // console.log(window.RobotUtilsJs);
-    // window.RobotUtilsJs.onServices(function(ALLeds, ALTextToSpeech) {
-    //   ALLeds.randomEyes(20.0);
-    // });
-    // let speechService = this.speechService;
-    // await this.speechService.setVolume(150, function() {
-    //   speechService.getVolume(async function(volume: number) {
-    //     console.log(volume);
-    //     speechService.say(`Mijn volume is: ${~~volume}`)
-    //   });
-    // });
-
-  }
+  ngOnInit() {}
 
   ngOnDestroy() {
     clearInterval(this.timerId);
+    this.speechService.stopAll();
   }
 
   invokeUserInteraction() {
@@ -86,7 +72,5 @@ export class MenuComponent implements OnInit, OnDestroy {
     const speech = `${randomItem.description} Druk dan op ${randomItem.name}`;
     self.speechService.say(speech);
   }
-
-
 
 }

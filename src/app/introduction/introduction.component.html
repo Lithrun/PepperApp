@@ -1,34 +1,11 @@
 <aw-wizard class="justify-content-center" #wizard [navBarLayout]="'large-filled-symbols'">
-    <aw-wizard-step [stepTitle]="'Polikliniek'" [navigationSymbol]="{ symbol: '1' }">
+    <aw-wizard-step [stepTitle]="'Uitleg'">
         <div class="centered-content">
-        <div>
-            Korte introductie over de polikliniek
-        </div>
-    
-        <div class="btn-group">
-            <button type="button" class="btn btn-lg btn-secondary" awNextStep (click)="phaseOne()">Verder</button>
-        </div>
-        </div>
-    </aw-wizard-step>
-    <aw-wizard-step [stepTitle]="'Instellingen'" [navigationSymbol]="{ symbol: '2' }">
-        <div class="centered-content">
-            <div class="offset-md-1">
-                <h2>Pepper instellingen</h2>
-                <app-configuration></app-configuration>
+            <div class="mb-3">
+                <label for="name">Naam van mijn vriendje</label>
+                <input id="name" #name type="text" value="{{friendName}}" (keydown)="setFriendName($event.keyCode, name.value)">
             </div>     
             <div class="btn-group">
-                <button type="button" class="btn btn-lg btn-secondary" awPreviousStep>Terug</button>
-                <button type="button" class="btn btn-lg btn-secondary" awNextStep>Verder</button>
-            </div>
-        </div>
-    </aw-wizard-step>
-    <aw-wizard-step [stepTitle]="'Uitleg'" [navigationSymbol]="{ symbol: '3' }">
-        <div class="centered-content">
-            <div>
-                Pepper legt stappen polikliniek verder uit
-            </div>       
-            <div class="btn-group">
-                <button type="button" class="btn btn-lg btn-secondary" awPreviousStep>Terug</button>
                 <button type="button" class="btn btn-lg btn-secondary"  [routerLink]="'/home'">Klaar</button>
             </div>
         </div>

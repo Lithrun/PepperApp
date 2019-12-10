@@ -42,9 +42,31 @@ export class SpeechService extends PepperService {
       }    
     }
 
+    public sayPositive() {
+      const randomPositivePhrase = this.positivePhrases[Math.floor(Math.random() * this.positivePhrases.length)];
+      this.say(randomPositivePhrase);
+    }
+
+    public sayNegative() {
+      const randomNegativePhrase = this.negativePhrases[Math.floor(Math.random() * this.negativePhrases.length)];
+      this.say(randomNegativePhrase);
+    }
+
     public stopAll() {
       this.robotUtils.onServices(function(ALTextToSpeech) {
         ALTextToSpeech.stopAll();
       });
     }
+
+    private positivePhrases: string[] = [
+      "Goed gedaan! Dat was het juiste antwoord!",
+      "Dat is juist.",
+      "Dat klopt"
+    ];
+
+    private negativePhrases: string[] = [
+      "Dat is niet het juiste antwoord, maar je was dicht bij!",
+      "Helaas",
+    ];
+
 }

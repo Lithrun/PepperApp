@@ -3,6 +3,7 @@ import { Story } from '../story';
 import { StoryService } from 'src/services/story.service';
 import { SpeechService } from 'src/services/speech.service';
 import { PepperService } from 'src/services/pepper.service';
+import { SettingsService } from 'src/services/settings.service';
 
 @Component({
   selector: 'app-story-detail',
@@ -11,9 +12,8 @@ import { PepperService } from 'src/services/pepper.service';
 })
 export class StoryDetailComponent implements OnInit, OnDestroy {
 
-  constructor(private storyService: StoryService, private pepperService: PepperService, private speechService: SpeechService) {
-    this.story = storyService.getAllStories()[0];
-    this.createLines();
+  constructor(private settingsService: SettingsService, private pepperService: PepperService, private speechService: SpeechService) {
+    // this.story = storyService.getAllStories()[0];
   }
 
   story: Story;
@@ -24,7 +24,8 @@ export class StoryDetailComponent implements OnInit, OnDestroy {
   //"ALTextToSpeech/TextDone" this should be used, but uncertain how this works with callbacks
   
   ngOnInit() {
-    // this.story = <Story>history.state.data.item;
+    this.story = <Story>history.state.data.item;
+    this.createLines();
   }
 
   ngOnDestroy() {
@@ -92,13 +93,14 @@ export class StoryDetailComponent implements OnInit, OnDestroy {
     currentLine.isSelected = false;
     const index = this.lines.indexOf(currentLine);
     let newLine: StoryDetail;
-    if (index + 1 < this.lines.length) {
+    if (index + 1 === this.lines.length) {
       newLine = this.lines[index + 1];
       newLine.isSelected = true;
     } else {
-      alert("laatste regel!");
+      this.speechService.say(`En zo ${this.settingsService.getFriendName()}, dat was het einde van dit verhaaltje`);
+      this.unsubcribeTextDoneEvent();
+      return;
     }
-
     return newLine;
   }
 

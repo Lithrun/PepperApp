@@ -5,13 +5,15 @@ import { isEmpty } from '../../helper/object'
 import { IState, STATUS, ICard } from '../interface'
 import { SpeechService } from 'src/services/speech.service'
 import { PointsService } from 'src/services/points.service'
+import { SettingsService } from 'src/services/settings.service'
 
 @Injectable()
 export class GameActions {
   constructor(
     private ngRedux: NgRedux<IState>, 
     private speechService: SpeechService,
-    private pointsService: PointsService) {}
+    private pointsService: PointsService,
+    private settingsService: SettingsService) {}
 
   static RESET = 'RESET'
   static UPDATE_STATUS = 'UPDATE_STATUS'
@@ -76,9 +78,10 @@ export class GameActions {
       return this.updateLastSelectedCard(card)
     }
     if (state.lastSelectedCard.name === card.name) {
-      this.updateLastSelectedCard(null)
-      this.match()
-      const remains = +state.remains - 1
+      this.updateLastSelectedCard(null);
+      this.match();
+      this.speechService.sayPositive();
+      const remains = +state.remains - 1;
       if (!remains) {
         this.handleVictory();
         return this.updateStatus(STATUS.PASS);
